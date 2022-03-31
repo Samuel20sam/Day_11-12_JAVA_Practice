@@ -13,27 +13,27 @@ public class StockPortfolio
     public void stockValue ()
     {
         System.out.println("How many portfolio do you want to create");
-        int accounts = in.nextInt();
-        for (int a = 1; a <= accounts; a++)
+        int portfolio = in.nextInt();
+        for (int a = 1; a <= portfolio; a++)
         {
             System.out.println("Create an portfolio Name");
-            String portfolio = in.next();
+            String portfolioName = in.next();
 
-            map.put(portfolio, new LinkedList<>());
+            map.put(portfolioName, new LinkedList<>());
             System.out.println("Enter number of Stocks");
-            int quantity = in.nextInt();
+            int stocks = in.nextInt();
 
-            for (int i = 1; i <= quantity; i++)
+            for (int i = 1; i <= stocks; i++)
             {
-                System.out.println("Enter the " + i + " share name");
+                System.out.println("Share " +i +" Enter the share name");
                 String shareName = in.next();
-                System.out.println("Enter the no. of shares");
+                System.out.println("Share " +i +" Enter the number of shares");
                 int noOfShare = in.nextInt();
-                System.out.println("Enter share price of each stock");
+                System.out.println("Share " +i +" Enter share price of each stock");
                 float sharePrice = in.nextFloat();
 
                 Stock stock = new Stock(shareName, noOfShare, sharePrice);
-                map.get(portfolio).add(stock);
+                map.get(portfolioName).add(stock);
             }
         }
         display();
